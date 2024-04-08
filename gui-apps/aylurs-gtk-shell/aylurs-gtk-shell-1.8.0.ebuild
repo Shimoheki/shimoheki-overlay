@@ -3,6 +3,8 @@
 
 EAPI=8
 
+inherit meson
+
 DESCRIPTION="A customizable and extensible shell"
 HOMEPAGE="https://aylur.github.io/ags-docs/"
 #SRC_URI="https://github.com/Aylur/ags"
@@ -41,7 +43,7 @@ dev-lang/typescript
 dev-build/meson
 "
 
-S="${WORKDIR}/aylurs-gtk-shell"
+S="${WORKDIR}/ags"
 BUILD_DIR="${S}/build"
 
 src_prepare() {
