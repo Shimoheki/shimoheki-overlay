@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86 ~arm ~arm64"
 RDEPEND="
 dev-libs/gjs
 dev-libs/gobject-introspection
-dev-libs/gtk-layer-shell
+gui-libs/gtk-layer-shell
 x11-libs/gtk+:3
 media-libs/libpulse
 net-libs/libsoup
