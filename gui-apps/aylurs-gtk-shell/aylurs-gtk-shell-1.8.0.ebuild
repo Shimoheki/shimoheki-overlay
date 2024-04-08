@@ -11,7 +11,7 @@ SRC_URI="
         https://github.com/Aylur/ags/releases/download/v1.8.0/node_modules-v1.8.0.tar.gz -> ${P}-modules.tar.gz
 "
 
-LICENSE="GPL-3.0"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm ~arm64"
 #IUSE="pulseaudio libsoup systemtray notify networkmanager powerprofiles upower bluetooth greetd"
