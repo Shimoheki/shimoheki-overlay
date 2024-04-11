@@ -45,6 +45,7 @@ dev-build/meson
 
 S="${WORKDIR}/ags"
 BUILD_DIR="${S}/build"
+MYMESONARGS="-Dbuild_types=true"
 
 src_prepare() {
 	default
@@ -58,8 +59,6 @@ src_configure() {
 src_install() {
 	meson_src_install
 
-	# Copy packaged NodeJS modules to the app dir
 	insinto "/usr/share/com.github.Aylur.ags/"
-	doins -r "node_modules"
 	dosym /usr/share/com.github.Aylur.ags/com.github.Aylur.ags /usr/bin/ags
 }
