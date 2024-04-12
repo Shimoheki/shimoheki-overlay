@@ -25,7 +25,7 @@ gui-libs/gtk-layer-shell
 x11-libs/gtk+:3
 media-libs/libpulse
 net-libs/libsoup
-dev-libs/libdbusmenu
+dev-libs/libdbusmenu[gtk3]
 x11-libs/libnotify
 net-misc/networkmanager
 sys-power/power-profiles-daemon
