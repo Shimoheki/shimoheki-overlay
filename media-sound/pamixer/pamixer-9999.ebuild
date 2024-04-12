@@ -16,12 +16,7 @@ RESTRICT="mirror"
 
 RDEPEND="
 		dev-libs/cxxopts
-		media-sound/pulseaudio
+		media-sound/libpulse
 "
 
 DEPEND="${RDEPEND}"
-
-#src_install() {
-#	dobin ${PN}
-#	dodoc README.rst
-#}

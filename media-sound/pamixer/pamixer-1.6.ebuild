@@ -15,12 +15,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 		dev-libs/cxxopts
-		media-sound/pulseaudio
+		media-libs/libpulse
 "
 
 DEPEND="${RDEPEND}"
-
-#src_install() {
-#	dobin ${PN}
-#	dodoc README.rst
-#}
