@@ -16,31 +16,33 @@ SRC_URI="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm ~arm64"
-#IUSE="pulseaudio libsoup systemtray notify networkmanager powerprofiles upower bluetooth greetd"
+IUSE="bluetooth greetd dbusmenu +soup libnotify networkmanager powerprofile battery"
+
+REQUIRED_USE=""
 
 RDEPEND="
-dev-libs/gjs
-dev-libs/gobject-introspection
-gui-libs/gtk-layer-shell
-x11-libs/gtk+:3
-media-libs/libpulse
-net-libs/libsoup
-dev-libs/libdbusmenu[gtk3]
-x11-libs/libnotify
-net-misc/networkmanager
-sys-power/power-profiles-daemon
-sys-power/upower
-net-wireless/gnome-bluetooth
+	sys-libs/glibc
+	sys-libs/pam
+	dev-libs/gjs
+	dev-libs/gobject-introspection
+	gui-libs/gtk-layer-shell[introspection]
+	x11-libs/gtk+:3
+	media-libs/libpulse
+	bluetooth? ( >=net-wireless/gnome-bluetooth-42 )
+	greetd? ( gui-libs/greetd )
+	dbusmenu? ( dev-libs/libdbusmenu[gtk3] )
+	soup? ( net-libs/libsoup:3 )
+	libnotify? ( x11-libs/libnotify )
+	networkmanager? ( net-misc/networkmanager )
+	powerprofile? ( sys-power/power-profiles-daemon )
+	battery? ( sys-power/upower )
 "
-# gui-libs/greetd
-DEPEND="
-${RDEPEND}
-sys-libs/glibc
-sys-libs/pam
-"
+DEPEND="${RDEPEND}"
 BDEPEND="
-dev-lang/typescript
-dev-build/meson
+	dev-libs/gobject-introspection
+	dev-build/meson
+	net-libs/nodejs
+	dev-lang/typescript
 "
 
 S="${WORKDIR}/ags"

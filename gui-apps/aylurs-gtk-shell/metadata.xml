@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<use>
+    <flag name="bluetooth">required for bluetooth service</flag>
+    <flag name="greetd">required for greetd service</flag>
+    <flag name="dbusmenu">required for systemtray service</flag>
+    <flag name="soup">required for Utils.fetch feature</flag>
+    <flag name="libnotify">required for sending notifications</flag>
+    <flag name="networkmanager">required for network service</flag>
+    <flag name="powerprofile">required for powerprofiles service</flag>
+    <flag name="battery">required for battery service</flag>
+</use>
+</pkgmetadata>
