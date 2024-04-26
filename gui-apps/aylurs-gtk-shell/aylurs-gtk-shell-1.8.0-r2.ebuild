@@ -31,7 +31,7 @@ RDEPEND="
 	bluetooth? ( >=net-wireless/gnome-bluetooth-42 )
 	greetd? ( gui-libs/greetd )
 	dbusmenu? ( dev-libs/libdbusmenu[gtk3] )
-	soup? ( net-libs/libsoup:3 )
+	soup? ( net-libs/libsoup )
 	libnotify? ( x11-libs/libnotify )
 	networkmanager? ( net-misc/networkmanager )
 	powerprofile? ( sys-power/power-profiles-daemon )
