@@ -16,7 +16,7 @@ SRC_URI="
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm ~arm64"
-IUSE="bluetooth greetd dbusmenu +soup libnotify networkmanager powerprofile battery"
+IUSE="bluetooth greetd tray +soup libnotify networkmanager powerprofile battery"
 
 REQUIRED_USE=""
 
@@ -30,7 +30,7 @@ RDEPEND="
 	media-libs/libpulse
 	bluetooth? ( >=net-wireless/gnome-bluetooth-42 )
 	greetd? ( gui-libs/greetd )
-	dbusmenu? ( dev-libs/libdbusmenu[gtk3] )
+	tray? ( dev-libs/libdbusmenu[gtk3] )
 	soup? ( net-libs/libsoup )
 	libnotify? ( x11-libs/libnotify )
 	networkmanager? ( net-misc/networkmanager )

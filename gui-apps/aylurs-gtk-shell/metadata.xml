@@ -4,7 +4,7 @@
 <use>
     <flag name="bluetooth">required for bluetooth service</flag>
     <flag name="greetd">required for greetd service</flag>
-    <flag name="dbusmenu">required for systemtray service</flag>
+    <flag name="tray">required for systemtray service</flag>
     <flag name="soup">required for Utils.fetch feature</flag>
     <flag name="libnotify">required for sending notifications</flag>
     <flag name="networkmanager">required for network service</flag>
