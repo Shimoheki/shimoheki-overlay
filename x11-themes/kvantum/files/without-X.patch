@@ -1,0 +1,65 @@
+diff --git a/style/blur/blurhelper.cpp b/style/blur/blurhelper.cpp
+index 8075665..9cf8dd9 100644
+--- a/style/blur/blurhelper.cpp
++++ b/style/blur/blurhelper.cpp
+@@ -49,10 +49,11 @@ BlurHelper::BlurHelper (QObject* parent, QList<qreal> menuS, QList<qreal> toolti
+ #if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
+     atom_blur_ = XInternAtom (QX11Info::display(), "_KDE_NET_WM_BLUR_BEHIND_REGION", False);
+ #else
+-    if (auto x11NativeInterfce = qApp->nativeInterface<QNativeInterface::QX11Application>())
+-      atom_blur_ = XInternAtom (x11NativeInterfce->display(), "_KDE_NET_WM_BLUR_BEHIND_REGION", False);
+-    else
+-      atom_blur_ = None;
++    // if (auto x11NativeInterfce = qApp->nativeInterface<QNativeInterface::QX11Application>())
++    //   atom_blur_ = XInternAtom (x11NativeInterfce->display(), "_KDE_NET_WM_BLUR_BEHIND_REGION", False);
++    // else
++    //   atom_blur_ = None;
++    atom_blur_ = None;
+ #endif
+   }
+   else
+@@ -287,8 +288,8 @@ void BlurHelper::update (QWidget* widget) const
+     display = QX11Info::display();
+ #else
+     QList<unsigned long> data;
+-    if (auto x11NativeInterfce = qApp->nativeInterface<QNativeInterface::QX11Application>())
+-      display = x11NativeInterfce->display();
++    // if (auto x11NativeInterfce = qApp->nativeInterface<QNativeInterface::QX11Application>())
++    //   display = x11NativeInterfce->display();
+ #endif
+     if (display == nullptr)
+       return;
+@@ -338,8 +339,8 @@ void BlurHelper::clear (QWidget* widget) const
+ #if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
+   display = QX11Info::display();
+ #else
+-  if (auto x11NativeInterfce = qApp->nativeInterface<QNativeInterface::QX11Application>())
+-    display = x11NativeInterfce->display();
++  // if (auto x11NativeInterfce = qApp->nativeInterface<QNativeInterface::QX11Application>())
++  //   display = x11NativeInterfce->display();
+ #endif
+   if (display && widget->internalWinId())
+     XDeleteProperty (display, widget->internalWinId(), atom_blur_);
+diff --git a/style/themeconfig/ThemeConfig.cpp b/style/themeconfig/ThemeConfig.cpp
+index f13531e..978596e 100644
+--- a/style/themeconfig/ThemeConfig.cpp
++++ b/style/themeconfig/ThemeConfig.cpp
+@@ -592,12 +592,12 @@ theme_spec ThemeConfig::getCompositeSpec()
+     if (XGetSelectionOwner(QX11Info::display(), atom))
+       compositing = true;
+ #else
+-    if (auto x11NativeInterfce = qApp->nativeInterface<QNativeInterface::QX11Application>())
+-    {
+-      Atom atom = XInternAtom(x11NativeInterfce->display(), "_NET_WM_CM_S0", False);
+-      if (XGetSelectionOwner(x11NativeInterfce->display(), atom))
+-        compositing = true;
+-    }
++    // if (auto x11NativeInterfce = qApp->nativeInterface<QNativeInterface::QX11Application>())
++    // {
++    //   Atom atom = XInternAtom(x11NativeInterfce->display(), "_NET_WM_CM_S0", False);
++    //   if (XGetSelectionOwner(x11NativeInterfce->display(), atom))
++    //     compositing = true;
++    // }
+ #endif
+   }
+   else if (QString::compare(QGuiApplication::platformName(), "wayland", Qt::CaseInsensitive) == 0)
