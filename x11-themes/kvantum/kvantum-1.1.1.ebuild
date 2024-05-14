@@ -44,7 +44,7 @@ RDEPEND="
 	${CDEPEND}
 "
 BDEPEND="
-	qt5? ( dev-qt/linquist-tools:5 )
+	qt5? ( dev-qt/linguist-tools:5 )
 	qt6? ( dev-qt/qttools:6[linguist] )
 "
 
@@ -55,7 +55,7 @@ src_unpack() {
 	unpack ${A}
 	if ! use X ; then
 		cd "${S}"
-		epatch "${FILESDIR}/without-X.patch"
+		eapply "${FILESDIR}/without-X.patch"
 	fi
 }
 
