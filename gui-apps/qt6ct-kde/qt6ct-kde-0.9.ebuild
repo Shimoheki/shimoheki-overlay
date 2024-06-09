@@ -22,7 +22,7 @@ RDEPEND="
 BDEPEND="
 	dev-qt/qtbase:6
 	dev-qt/qttools:6[linguist]
-	dev-qt/kconfig:6
+	kde-frameworks/kconfig:6
 	kde-frameworks/kcolorscheme:6
 "
 
