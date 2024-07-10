@@ -7,7 +7,7 @@ inherit cmake
 
 DESCRIPTION="Qt6 Configuration Tool (for DE/WM without Qt integration)"
 HOMEPAGE="https://github.com/trialuser02/qt6ct/"
-SRC_URI="https://github.com/trialuser02/qt6ct/releases/download/${PV}/qt6ct-${PV}.tar.xz"
+SRC_URI="https://github.com/trialuser02/qt6ct/releases/download/${PV}/${P/-kde/}.tar.xz"
 
 LICENSE="BSD-2"
 SLOT="0"
@@ -25,6 +25,10 @@ BDEPEND="
 	kde-frameworks/kconfig:6
 	kde-frameworks/kcolorscheme:6
 "
+
+PATCHES="${FILESDIR}/qt6ct-shenanigans.patch"
+
+S="${WORKDIR}/${P/-kde/}"
 
 pkg_postinst() {
 	if [[ ! ${REPLACING_VERSIONS} ]]; then
