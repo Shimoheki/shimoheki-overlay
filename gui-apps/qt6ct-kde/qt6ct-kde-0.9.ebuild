@@ -12,18 +12,21 @@ SRC_URI="https://github.com/trialuser02/qt6ct/releases/download/${PV}/${P/-kde/}
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64"
+IUSE="svg"
 
 # uses Qt private APIs wrt :=
-DEPEND="dev-qt/qtbase:6=[gui,widgets]"
-RDEPEND="
-	${DEPEND}
-	dev-qt/qtsvg:6
-"
-BDEPEND="
-	dev-qt/qtbase:6
-	dev-qt/qttools:6[linguist]
+DEPEND="
+	dev-qt/qtbase:6=[gui,widgets]
 	kde-frameworks/kconfig:6
 	kde-frameworks/kcolorscheme:6
+"
+RDEPEND="
+	${DEPEND}
+	svg? ( dev-qt/qtsvg:6 )
+"
+BDEPEND="
+	${DEPEND}
+	dev-qt/qttools:6[linguist]
 "
 
 PATCHES="${FILESDIR}/qt6ct-shenanigans.patch"

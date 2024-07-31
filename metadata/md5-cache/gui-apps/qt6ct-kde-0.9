@@ -1,14 +1,15 @@
-BDEPEND=dev-qt/qtbase:6 dev-qt/qttools:6[linguist] kde-frameworks/kconfig:6 kde-frameworks/kcolorscheme:6 app-alternatives/ninja >=dev-build/cmake-3.20.5
+BDEPEND=dev-qt/qtbase:6=[gui,widgets] kde-frameworks/kconfig:6 kde-frameworks/kcolorscheme:6 dev-qt/qttools:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.20.5
 DEFINED_PHASES=compile configure install postinst prepare test
-DEPEND=dev-qt/qtbase:6=[gui,widgets]
+DEPEND=dev-qt/qtbase:6=[gui,widgets] kde-frameworks/kconfig:6 kde-frameworks/kcolorscheme:6
 DESCRIPTION=Qt6 Configuration Tool (for DE/WM without Qt integration)
 EAPI=8
 HOMEPAGE=https://github.com/trialuser02/qt6ct/
 INHERIT=cmake
+IUSE=svg
 KEYWORDS=amd64
 LICENSE=BSD-2
-RDEPEND=dev-qt/qtbase:6=[gui,widgets] dev-qt/qtsvg:6
+RDEPEND=dev-qt/qtbase:6=[gui,widgets] kde-frameworks/kconfig:6 kde-frameworks/kcolorscheme:6 svg? ( dev-qt/qtsvg:6 )
 SLOT=0
-SRC_URI=https://github.com/trialuser02/qt6ct/releases/download/0.9/qt6ct-0.9.tar.xz -> qt6ct-0.9-kde.tar.xz
+SRC_URI=https://github.com/trialuser02/qt6ct/releases/download/0.9/qt6ct-0.9.tar.xz
 _eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	e503ea5acc20410237ba33ec3f7c857d	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	baea6080dd821f5562d715887954c9d3	cmake	258a4691fd43b8cd5814cb1acbb3c7df
-_md5_=6c39f97952e0858b45bdf3690493c460
+_md5_=776daec9b33b33cc7a643e1a7c9aae34

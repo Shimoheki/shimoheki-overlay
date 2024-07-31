@@ -12,18 +12,29 @@ SRC_URI="https://download.sourceforge.net/qt5ct/qt5ct-${PV}.tar.bz2"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="amd64 ~arm ~ppc64 x86"
+IUSE="svg"
 
-RDEPEND="
+DEPEND="
 	!x11-misc/qt5ct
-	kde-frameworks/qqc2-desktop-style
 	dev-qt/qtconcurrent:5
 	dev-qt/qtcore:5
 	dev-qt/qtdbus:5
 	dev-qt/qtgui:5=[dbus]
 	dev-qt/qtwidgets:5
+	dev-qt/qtquickcontrols2:5
+	kde-frameworks/kconfigwidgets:5
+	kde-frameworks/qqc2-desktop-style
+	kde-frameworks/kconfig:5
+	kde-frameworks/kiconthemes:5
 "
-DEPEND="${RDEPEND}"
+
+RDEPEND="
+	${DEPEND}
+	svg? ( dev-qt/qtsvg:5 )
+"
+
 BDEPEND="
+	${DEPEND}
 	dev-qt/linguist-tools:5
 	dev-qt/qtpaths:5
 "
