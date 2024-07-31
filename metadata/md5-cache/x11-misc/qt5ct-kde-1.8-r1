@@ -1,0 +1,14 @@
+BDEPEND=dev-qt/linguist-tools:5 dev-qt/qtpaths:5 app-alternatives/ninja >=dev-build/cmake-3.20.5
+DEFINED_PHASES=compile configure install postinst prepare test
+DEPEND=!x11-misc/qt5ct kde-frameworks/qqc2-desktop-style dev-qt/qtconcurrent:5 dev-qt/qtcore:5 dev-qt/qtdbus:5 dev-qt/qtgui:5=[dbus] dev-qt/qtwidgets:5
+DESCRIPTION=Qt5 configuration tool, similar to qtconfig for Qt4 (KDE fixes)
+EAPI=8
+HOMEPAGE=https://aur.archlinux.org/packages/qt5ct-kde
+INHERIT=cmake
+KEYWORDS=amd64 ~arm ~ppc64 x86
+LICENSE=BSD-2
+RDEPEND=!x11-misc/qt5ct kde-frameworks/qqc2-desktop-style dev-qt/qtconcurrent:5 dev-qt/qtcore:5 dev-qt/qtdbus:5 dev-qt/qtgui:5=[dbus] dev-qt/qtwidgets:5
+SLOT=0
+SRC_URI=https://download.sourceforge.net/qt5ct/qt5ct-1.8.tar.bz2
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	e503ea5acc20410237ba33ec3f7c857d	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	baea6080dd821f5562d715887954c9d3	cmake	258a4691fd43b8cd5814cb1acbb3c7df
+_md5_=e8038a5d8663acac6db0782729150bfa
